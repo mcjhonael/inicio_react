@@ -1,0 +1,67 @@
+1 installar node
+- node  =  un backend de js =  es un motor de compilacion de js
+- en node html no se pueden renderizar xk solo ejecuta archivo js
+- para ejecutar codigo js 1ro tenias que crear un html y llamarlo y asi ejecutarlo
+- el navegador tiene un motor V8 que permite ejecutar y compilar codigo js 
+- si queremos compilar archivos js sin necesidad de usar el navegador usamos node
+
+como se crea un proyecto en backend
+- npm gestor de paquetes de node
+- npm init (es lo inicial lo 1ro k debemos hacer)
+- apartir de lo anterior ya hemos creado un proyecto de node
+- para instalar una libreria debemos estar en el mismo proyecto npm install name_libreria
+- una vez creada la libreria defrente pasa que se crea una carpeta de node_modules ahi es donde se almacena todo las dependencias
+- crear un nuevo proyecto en react (npx create-react-app name_app)
+- el index.html crea un espacio en la web por la cual el index.js(padre) captura ese espacio y ocurre la magia de colocar sus hijos app.js(hijo)
+- npm install (se encarga de ir al package.json y recoger todas las librerias instaladas y la version y cuando queramos bajar el proyecto este comando instalara todo de nuevo)
+- jsx combinacion de js + html
+-lo que esta dentro de la funcion es la logica del componente y lo que retorna es la vida del componente
+
+
+MOSTRAR UNA VARIABLE
+-{variable} = para mostrar variables
+- solo puede retornar un solo div pero en caso contrario puedes colocar <> </> para retornar mas div 
+- en react ya no se hace un getElementById si no defrente en la etiqueta que necesitas aplicar eventos lo haces bajo una funcion
+
+<button
+          onClick={(e) => {
+            console.log(e);
+          }}
+        >
+          +1
+        </button>
+- referenciamos una variable para que no tengamos k recibir ese parametro si no en otro lado recibir el parametro
+
+VARIABLES DE ESTADO
+- una variable de estado, es una variable que esta siendo observada por el DOM en todo momento, de hecho, si la variable se modifica, el DOM reacciona y redibuja todos los elementos que dependen de la variable de estado.
+- useState (recibe el valor inicial de la variable)
+const [contador,setContador]=useState(0)
+es igual a decir asi:
+const resultado=useState(0)
+const contador=resultado[0] 
+const setContador=resultado[1] 
+- retorna un arreglo de 2 elementos
+contador=variable de estado 
+setContador modificador de la variable de estado
+
+- que pasa cuando imprimimos un clg xk se dibuja 2 veces en la pantalla? cuando se cambia el valor de la VA normal se actualiza la etiqueta y el DOM todo se ejecuta nuevamenta react tiene un don falso y un verdadero si el falso se actualiza el verdadero recien se actualiza pero unicamente la etiqueta que tiene la VA
+- cuando se usa una variable de estado? cuando una variable keramos que dependa del DOM
+
+otro manera creacion de un componente padre y un componente hijo
+    <div>
+      <h6>Lista de libros</h6>
+      <ul>{
+        libros.map((objLibro) => {
+            return <li>{objLibro}</li>
+        })
+        }
+      </ul>
+    </div>
+- intentamos crear una lista de libros pero queremos itererarlos la lista en otro componenete neto aparte para mejor contenido
+
+-<Personas arreglo={personas}></Personas> de esta manera se le pasa parametros al componente Personas y el componente persona recibira todos los datos en una variable llamada "arreglo"
+las props normalmente recibe un objeto pero tenemos de destructurarlo para obtener lo que lo deseamos
+
+-los estilos son de manera global x eso es bueno trabajar con clases
+- cada vez que iteremos algo siempre debemos colocar el identificador  elementos generados dinamicamente
+- key se le colocar al componente o etiqueta se va ser renderizado muchas veces
